@@ -1,0 +1,48 @@
+<body>
+  <div class="center-screen">
+    <form #laForm="ngForm" class="auth" (ngSubmit)="login($event)">
+      <mat-form-field appearance="fill">
+        <mat-label>E-mail</mat-label>
+        <input
+          #emailInput="ngModel"
+          matInput
+          type="email"
+          name="email"
+          [(ngModel)]="model.email"
+          placeholder="E-mail..."
+          required
+          pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
+        />
+        <mat-error *ngIf="emailInput.hasError('required')"
+          >E-mail obbligatoria</mat-error
+        >
+        <mat-error *ngIf="emailInput.hasError('pattern')"
+          >E-mail non valida</mat-error
+        >
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Password</mat-label>
+        <input
+          #passwordInput="ngModel"
+          matInput
+          type="password"
+          name="password"
+          [(ngModel)]="model.password"
+          placeholder="Password..."
+          required
+        />
+        <mat-error *ngIf="passwordInput.hasError('required')"
+          >Password obbligatoria</mat-error
+        >
+      </mat-form-field>
+      <button
+        mat-raised-button
+        color="primary"
+        type="submit"
+        [disabled]="laForm.form.invalid"
+      >
+        Entra
+      </button>
+    </form>
+  </div>
+</body>

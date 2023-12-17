@@ -1,0 +1,12 @@
+div {
+  /* border: solid 1px red; */
+  transform: translatey(300%);
+}
+p {
+  text-align: center;
+  font-style: oblique;
+  font-size: 1rem;
+}
+body {
+  background-color: rgb(181, 183, 246);
+}

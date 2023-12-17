@@ -1,0 +1,23 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <a mat-button routerLink="/home">Home</a>
+    <a mat-button routerLink="/news">News</a>
+    <div>Search</div>
+    <span style="flex: 1 auto"></span>
+
+    <a mat-button routerLink="/login">Login</a>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<!--   non funzionante  - appare dopo il login ma scompare quando si fa refresh-->
+<form
+  #laForm="ngForm"
+  color="primary"
+  *ngIf="userIsLoggedIn"
+  (ngSubmit)="cerca()"
+  class="bck"
+>
+  <span>Search</span
+  ><mat-icon><span class="material-symbols-outlined"> search </span></mat-icon>
+  <input type="text" placeholder="cerca..." />
+</form>

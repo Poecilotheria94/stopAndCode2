@@ -1,0 +1,8 @@
+<div *ngIf="model">
+  <mat-card *ngFor="let n of notizie">
+    <p style="font-size: 1.6rem">{{ n.name }}</p>
+    <p>{{ n.description }}</p>
+    <img src=>
+    <p id="link" (click)="apriSito(n.url)">{{ n.url }}</p>
+  </mat-card>
+</div>
